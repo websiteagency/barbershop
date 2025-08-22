@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     handleInitialVisibleElements();
     renderTestimonials();
     handleStateButton();
+    renderCarousel();
+    updateFooterYear();
 });
 
 /**
@@ -238,4 +240,44 @@ function handleStateButton(){
         e.preventDefault();
         window.open(this.href, '_blank');
     });
+}
+
+function renderCarousel() {
+  // Array de imágenes (reemplaza con tus propias imágenes)
+  const images = [
+    "assets/img/corte1.jpeg",
+    "assets/img/corte1.jpeg",
+    "assets/img/corte1.jpeg",
+    "assets/img/corte1.jpeg",
+    "assets/img/corte1.jpeg",
+    "assets/img/corte1.jpeg",
+    "assets/img/corte1.jpeg",
+    "assets/img/corte1.jpeg",
+  ];
+  
+  const carouselTrack = document.getElementById('carousel-track');
+  
+  // Duplicamos las imágenes para crear un efecto de bucle continuo
+  const duplicatedImages = [...images, ...images];
+  
+  // Generamos el HTML para cada imagen
+  duplicatedImages.forEach(imageSrc => {
+    const carouselItem = document.createElement('div');
+    carouselItem.className = 'carousel-item';
+    
+    const img = document.createElement('img');
+    img.src = imageSrc;
+    img.alt = "Imagen de la barbería";
+    
+    carouselItem.appendChild(img);
+    carouselTrack.appendChild(carouselItem);
+  });
+}
+
+function updateFooterYear() {
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    const currentYear = new Date().getFullYear();
+    yearElement.textContent = currentYear;
+  }
 }
