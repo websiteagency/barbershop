@@ -6,20 +6,20 @@
 document.addEventListener("DOMContentLoaded", () => {
   // PRIORIDAD ALTA - Ejecución inmediata (crítico para UX)
   handleAccessibility();
-  updateFooterYear();
   handleInitialVisibleElements();
 
   // PRIORIDAD MEDIA - Ejecución con breve delay (importante pero no crítico)
   setTimeout(() => {
     initializeScrollAnimations();
     handleStateButton();
-  }, 100);
+  }, 600);
 
   // PRIORIDAD BAJA - Ejecución cuando el navegador esté inactivo
   requestIdleCallback(
     () => {
       renderTestimonials();
       renderCarousel();
+      updateFooterYear();
     },
     { timeout: 2000 }
   );
