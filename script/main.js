@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     initializeScrollAnimations();
     handleStateButton();
-  }, 600);
+  }, 800);
 
   // PRIORIDAD BAJA - Ejecución cuando el navegador esté inactivo
   requestIdleCallback(
