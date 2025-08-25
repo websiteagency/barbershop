@@ -5,8 +5,8 @@
  */
 document.addEventListener("DOMContentLoaded", () => {
   // PRIORIDAD ALTA - Ejecución inmediata (crítico para UX)
-  handleAccessibility();
-  handleInitialVisibleElements();
+  // handleAccessibility();
+  // handleInitialVisibleElements();
 
   // PRIORIDAD MEDIA - Ejecución con breve delay (importante pero no crítico)
   setTimeout(() => {
